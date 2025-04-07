@@ -60,7 +60,8 @@ Update the setting as your set in docker-compose.yml
 
 ### Connect OpenWebUI to your servers
 
-> See [OpenAPI Tool Servers](https://docs.openwebui.com/openapi-servers/) for details.
+> [OpenAPI Tool Servers details](https://docs.openwebui.com/openapi-servers/mcp)
+> [OpenAPI Tool Servers FAQ](https://docs.openwebui.com/openapi-servers/faq)
 
 1. Open OpenWebUI > Settings > Tools
 2. Add a connection `http://localhost:8000/fetch`
