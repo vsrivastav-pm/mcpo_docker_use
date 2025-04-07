@@ -17,8 +17,10 @@ cp docker-compose.example.yml docker-compose.yml  #remember to update the enviro
 # Create a container and wait for the servers to start.
 # It may take time if you have many servers enabled.
 docker compose up -d
+```
 
-# use docker run as follow:
+```shell
+you can use docker run as follow:
 
 docker run -d \
   --name mcpo \
