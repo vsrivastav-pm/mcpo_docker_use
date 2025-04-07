@@ -24,20 +24,37 @@ Or you can build the docker from source.
 ```shell
 docker build -t mcpo .
 ```
+## docker volumes & environment setting
+
+Update the setting as your set in docker-compose.yml
+
+    volumes:
+      - ./config.json:/app/config/config.json
+      - ./logs:/app/logs
+    environment:
+      - MCPO_API_KEY=xxxx  # set the API key for openwebui here
+      
+      # if needed ,update for your own parameter
+      # - MCPO_HOST=0.0.0.0
+      # - MCPO_PORT=8000
+      # - MCPO_CONFIG=/app/config.json
+
 
 ### Connect OpenWebUI to your servers
 
 > See [OpenAPI Tool Servers](https://docs.openwebui.com/openapi-servers/) for details.
 
 1. Open OpenWebUI > Settings > Tools
-2. Add a connection `http://localhost:8000/memory`
-3. Check available tools on the chat page
+2. Add a connection `http://localhost:8000/fetch`
+3. Add the apikey if you set in docker-compose.yml
+4. Check available tools on the chat page
 
-With mcpo, each MCP server gets a separate endpoint. For example:
 
-get the API key for amap-maps；brave-search;tavily 
+get the API key firstly for mcp like amap-maps；brave-search;tavily from their website.
 
 get the example and guide from [mcpo.so](https://mcp.so/)
+
+With mcpo, each MCP server gets a separate endpoint. For example:
 
 - `http://localhost:8000/fetch`
 - `http://localhost:8000/amap-maps`
