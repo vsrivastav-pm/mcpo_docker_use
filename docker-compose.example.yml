@@ -1,0 +1,25 @@
+version: '3'
+
+services:
+  mcpo:
+    build: .
+    container_name: mcpo
+    restart: unless-stopped
+    image: mcpo-server
+    ports:
+      - "8000:8000"
+    volumes:
+      - ./config.json:/app/config/config.json
+      - ./logs:/app/logs
+    environment:
+      - MCPO_API_KEY=xxx  # set the apikey here
+      # if need ,use the set as your setting
+      # - MCPO_HOST=0.0.0.0
+      # - MCPO_PORT=8000
+      # - MCPO_CONFIG=/app/config.json
+    healthcheck:
+      test: ["CMD", "curl", "-f", "http://localhost:8000/docs"]
+      interval: 30s
+      timeout: 10s
+      retries: 3
+      start_period: 40s
