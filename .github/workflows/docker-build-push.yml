@@ -25,4 +25,4 @@ jobs:
         with:
           context: .
           push: true
-          image_tags: ${{ secrets.DOCKERHUB_USERNAME }}/${{ github.event.repository.name }}:latest
+          tags: ${{ secrets.DOCKERHUB_USERNAME }}/${{ github.event.repository.name }}:latest
