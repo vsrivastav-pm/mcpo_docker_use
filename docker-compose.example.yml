@@ -9,8 +9,8 @@ services:
     ports:
       - "8000:8000"
     volumes:
-      - ./config.json:/app/config/config.json
-      - ./logs:/app/logs
+      - ./config.json:/app/config/config.json  # update the setting as you set
+      - ./logs:/app/logs # update the setting as you set
     environment:
       - MCPO_API_KEY=xxx  # set the apikey here
       # if need ,use the set as your setting
