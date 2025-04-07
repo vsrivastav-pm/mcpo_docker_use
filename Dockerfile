@@ -18,7 +18,7 @@ RUN curl -LsSf https://astral.sh/uv/install.sh | env UV_INSTALL_DIR="/usr/local/
 # 安装mcpo和相关工具
 RUN uv pip install --system mcpo mcp-server-fetch
 
-# 安装Node.js MCP服务器包,根据你自己的需要
+# 安装Node.js MCP服务器包,根据你自己的需要增加
 RUN npm install -g \
     @amap/amap-maps-mcp-server \
     @baidumap/mcp-server-baidu-map \
