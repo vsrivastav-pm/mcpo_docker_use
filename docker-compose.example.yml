@@ -5,7 +5,7 @@ services:
     build: .
     container_name: mcpo
     restart: unless-stopped
-    image: mcpo-server
+    image: ghcr.io/flyfox666/mcpo_docker_use # or flyfox666bbw/mcpo_docker_use from dockerhub
     ports:
       - "8000:8000"
     volumes:
