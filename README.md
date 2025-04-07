@@ -61,6 +61,8 @@ Update the setting as your set in docker-compose.yml
 ### Connect OpenWebUI to your servers
 
 > [OpenAPI Tool Servers details](https://docs.openwebui.com/openapi-servers/mcp)
+>
+> 
 > [OpenAPI Tool Servers FAQ](https://docs.openwebui.com/openapi-servers/faq)
 
 1. Open OpenWebUI > Settings > Tools
