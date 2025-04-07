@@ -17,6 +17,23 @@ cp docker-compose.example.yml docker-compose.yml  #remember to update the enviro
 # Create a container and wait for the servers to start.
 # It may take time if you have many servers enabled.
 docker compose up -d
+
+# use docker run as follow:
+
+docker run -d \
+  --name mcpo \
+  --restart unless-stopped \
+  -p 8000:8000 \
+  -v "$(pwd)/config.json:/app/config/config.json" \
+  -v "$(pwd)/logs:/app/logs" \
+  -e MCPO_API_KEY=xxx \
+  --health-cmd 'curl -f http://localhost:8000/docs' \
+  --health-interval=30s \
+  --health-timeout=10s \
+  --health-retries=3 \
+  --health-start-period=40s \
+  ghcr.io/flyfox666/mcpo_docker_use
+
 ```
 
 Or you can build the docker from source.
