@@ -7,8 +7,8 @@ An example Docker image for [mcpo](https://github.com/open-webui/mcpo)（with np
 
 ```shell
 # Pull the repo
-git clone https://github.com/xxx/mcpo-docker.git
-cd mcpo-docker
+git clone https://github.com/flyfox666/Mcpo-Docker.git
+cd Mcpo-Docker
 
 # Copy sample files and edit them as you like.
 cp config.example.json config.json
@@ -35,10 +35,15 @@ docker build -t mcpo .
 
 With mcpo, each MCP server gets a separate endpoint. For example:
 
-- `http://localhost:8000/sequential-thinking`
-- `http://localhost:8000/memory`
-- `http://localhost:8000/time`
+get the API key for amap-maps；brave-search;tavily 
 
+get the example and guide from [mcpo.so](https://mcp.so/)
+
+- `http://localhost:8000/fetch`
+- `http://localhost:8000/amap-maps`
+- `http://localhost:8000/brave-search`
+- `http://localhost:8000/tavily-mcp`
+- 
 ## MCP configuration
 
 Standard MCP configuration file, see [config.example.json](./config.example.json).
