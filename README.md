@@ -1,5 +1,5 @@
-# Mcpo-Docker
-An example Docker image for [mcpo](https://github.com/open-webui/mcpo)（with npm,curl,nodejs,uv Pre-Built;Pre-Built MCP:amap;baidumap;server-brave-search; tavily;fetch）, a tool that exposes MCP (Model Context Protocol) servers as OpenAPI-compatible HTTP endpoints for [OpenWebUI](https://github.com/open-webui/open-webui).
+# mcpo_docker_use
+An example Docker image for [mcpo](https://github.com/open-webui/mcpo)（with api-key environment set; npm,curl,nodejs,uv Pre-Built;Pre-Built MCP:amap;baidumap;server-brave-search; tavily;fetch）, a tool that exposes MCP (Model Context Protocol) servers as OpenAPI-compatible HTTP endpoints for [OpenWebUI](https://github.com/open-webui/open-webui).
 
 > Still waiting for the official mcpo docker!
 
@@ -11,8 +11,8 @@ git clone https://github.com/flyfox666/mcpo_docker_use.git
 cd Mcpo-Docker
 
 # Copy sample files and edit them as you like.
-cp config.example.json config.json
-cp docker-compose.example.yml docker-compose.yml
+cp config.example.json config.json    #remember to update the apikey for the mcp if need
+cp docker-compose.example.yml docker-compose.yml  #remember to update the environment parameter
 
 # Create a container and wait for the servers to start.
 # It may take time if you have many servers enabled.
