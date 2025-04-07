@@ -19,9 +19,8 @@ cp docker-compose.example.yml docker-compose.yml  #remember to update the enviro
 docker compose up -d
 ```
 
-```shell
 you can use docker run as follow:
-
+```shell
 docker run -d \
   --name mcpo \
   --restart unless-stopped \
