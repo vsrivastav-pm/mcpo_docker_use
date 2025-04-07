@@ -7,6 +7,11 @@ on:
 jobs:
   build-and-push:
     runs-on: ubuntu-latest
+    # 添加权限设置，确保 GITHUB_TOKEN 有写入 Packages 的权限
+    permissions:
+      contents: read
+      packages: write # <--- 添加此行
+
     steps:
       - name: 检出代码
         uses: actions/checkout@v4
@@ -20,9 +25,25 @@ jobs:
           username: ${{ secrets.DOCKERHUB_USERNAME }}
           password: ${{ secrets.DOCKERHUB_TOKEN }}
 
+      # 新增：登录到 GitHub Container Registry (GHCR)
+      - name: 登录到 GHCR
+        uses: docker/login-action@v3
+        with:
+          registry: ghcr.io
+          # 使用 github.repository_owner 获取仓库所有者的用户名（个人或组织）
+          username: ${{ github.repository_owner }}
+          # 使用 GITHUB_TOKEN 作为密码，它由 GitHub Actions 自动提供
+          password: ${{ secrets.GITHUB_TOKEN }}
+
       - name: 构建和推送 Docker 镜像
         uses: docker/build-push-action@v5
         with:
           context: .
           push: true
-          tags: ${{ secrets.DOCKERHUB_USERNAME }}/${{ github.event.repository.name }}:latest
+          # 修改：添加 GHCR 的标签，同时保留 Docker Hub 的标签
+          tags: |
+            ${{ secrets.DOCKERHUB_USERNAME }}/${{ github.event.repository.name }}:latest
+            ghcr.io/${{ github.repository_owner }}/${{ github.event.repository.name }}:latest
+          # 可选：添加 cache 配置以加速构建（如果需要）
+          # cache-from: type=gha
+          # cache-to: type=gha,mode=max
