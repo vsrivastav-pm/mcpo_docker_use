@@ -7,7 +7,7 @@ An example Docker image for [mcpo](https://github.com/open-webui/mcpo)（with np
 
 ```shell
 # Pull the repo
-git clone https://github.com/flyfox666/Mcpo-Docker.git
+git clone https://github.com/flyfox666/mcpo_docker_use.git
 cd Mcpo-Docker
 
 # Copy sample files and edit them as you like.
